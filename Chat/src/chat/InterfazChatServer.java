@@ -8,15 +8,20 @@ import java.awt.event.*;
 
 public class InterfazChatServer extends JFrame {
 
-        ServerSocket servidor = null;
-        Socket socket = null;
-        BufferedReader lector = null;
-        PrintWriter escritor = null;  
+         ServerSocket servidor = null;/*Complementa al Socket pues se encarga de aceptar o no las conexiones*/
+        Socket socket = null;/*Un socket es un puente de unión entre 2 programas a través de la red.
+        Un servidor y un Cliente. Es decir, es el que se encarga de enviar y recibir la información.*/
+        BufferedReader lector = null;/*Lee texto de una secuencia de entrada de caracteres, almacenando 
+        caracteres en búfer para proporcionar una lectura eficiente de caracteres, matrices y líneas.*/
+        PrintWriter escritor = null;/*Imprime representaciones formateadas de objetos en un flujo de salida 
+        de texto. Esta clase implementa todos los métodos de impresión que se encuentran en PrintStream. 
+        No contiene métodos para escribir bytes sin formato, para lo cual un programa debería usar flujos de bytes no codificados.*/  
   
     public InterfazChatServer() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+        /*Un hilo de ejecución es la secuencia más pequeña de instrucciones programadas 
+        que un programador puede gestionar de forma independiente.*/
          Thread principal = new Thread(new Runnable(){
             public void run(){
                 try{
